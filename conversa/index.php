@@ -32,15 +32,18 @@ $mensagens = reload($_SESSION['contato']);
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
             <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         </a>
+
+        <a href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
+            <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
+        </a>
         
-        <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../inc/exit.php">Sair</a>
+                    <a class="nav-link" href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">Ver perfil</a>
                 </li>
             </ul>
         </div>  
@@ -72,7 +75,7 @@ $mensagens = reload($_SESSION['contato']);
                         <input class="input input-group" type="text" name="msg">
                     </div>
                     <div class="col-4">
-                        <input class="btn btn-primary" type="submit" value="Send">
+                        <input class="btn btn-primary" type="submit" value="Enviar">
                     </div>
                     
                 </div>

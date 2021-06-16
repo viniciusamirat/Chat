@@ -26,7 +26,7 @@ $resu = procurar_contatos();
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Meu perfil</a>
+                    <a class="nav-link" href="../perfil_usu/">Meu perfil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../inc/exit.php">Sair</a>
