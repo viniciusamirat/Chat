@@ -70,14 +70,20 @@ $mensagens = reload($_SESSION['contato']);
 
     <footer class="footer">
             <form action="index.php" method="POST">
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-8">
                         <input class="input input-group" type="text" name="msg">
                     </div>
                     <div class="col-4">
                         <input class="btn btn-primary" type="submit" value="Enviar">
-                    </div>
+                    </div>-->
                     
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="msg" placeholder="Escreva aqui">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Enviar</button>
+                    </div>
                 </div>
                 
             </form>

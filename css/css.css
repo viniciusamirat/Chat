@@ -50,14 +50,8 @@
 
 footer {
     position: fixed;
-    bottom:5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
-.centro{
-    margin: auto;
-
-
+    bottom:1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 97%;
 }
