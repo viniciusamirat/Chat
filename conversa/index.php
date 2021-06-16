@@ -47,11 +47,10 @@ $mensagens = reload($_SESSION['contato']);
     
     <?php foreach ($mensagens as $row) : ?>
 
-        <div class="container <?php if ($row['de'] != 1){ echo 'darker';} ?>">
+        <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
             <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
-            <!--<img src="f_logo_RGB-Hex-Blue_512.png" alt="Avatar" <?php //if ($row['de'] == 1){ echo 'class="right"';} ?>>-->
             <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
-            <span class="time<?php if ($row['de'] != 1){ echo '-left';} else { echo '-right';} ?>">11:00</span>
+            <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>">11:00</span>
         </div>
 
     <?php endforeach; ?>
@@ -63,7 +62,6 @@ $mensagens = reload($_SESSION['contato']);
     <footer class="footer">
             <form action="index.php" method="POST">
                 <div class="row">
-                    <!--<input type="hidden" name="de" value="<?php //echo $_SESSION['usuario']; ?>">-->
                     <input type="hidden" name="para" value="<?php echo $_SESSION['contato']; ?>">
                     <div class="col-8">
                         <input class="input input-group" type="text" name="msg">
