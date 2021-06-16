@@ -29,7 +29,7 @@ $resu = procurar_contatos();
                     <a class="nav-link" href="#">Meu perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link" href="../inc/exit.php">Sair</a>
                 </li>
             </ul>
         </div>  
