@@ -28,8 +28,11 @@ $mensagens = reload($_SESSION['contato']);
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
-        <button class="btn btn-primary" onclick="window.location.href='../contatos/'">voltar</button>
-        <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+        <a href="../contatos/">
+            <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
+            <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+        </a>
+        
         <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
