@@ -43,7 +43,7 @@ $mensagens = reload($_SESSION['contato']);
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
+                    <a class="nav-link" href="../inc/exit.php">Sair</a>
                 </li>
             </ul>
         </div>  
