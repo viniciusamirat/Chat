@@ -52,15 +52,17 @@ $mensagens = reload($_SESSION['contato']);
     <br>
     <br>
     
-    <?php foreach ($mensagens as $row) : ?>
+    <?php if ($mensagens) : ?>
+        <?php foreach ($mensagens as $row) : ?>
 
-        <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
-            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
-            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
-            <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>">11:00</span>
-        </div>
+            <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
+                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
+                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
+                <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>">11:00</span>
+            </div>
 
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
     <br>
     <br>
