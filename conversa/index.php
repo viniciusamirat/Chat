@@ -25,9 +25,16 @@ $mensagens = reload($_SESSION['contato']);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Chat</title>
+
+    <script>
+        function voltar(){
+            history.go(-1);
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
+        <button class="btn btn-primary" onclick="voltar()">voltar</button>
         <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
