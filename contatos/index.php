@@ -1,6 +1,6 @@
 <?php
 require_once('../conversa/functions.php');
-
+config();
 $resu = procurar_contatos();
 ?>
 

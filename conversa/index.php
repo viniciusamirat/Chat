@@ -1,10 +1,15 @@
 <?php 
 require_once('functions.php');
+config();
+if (!empty($_GET['id'])) {
 
-$contato = $_GET['id'];
+    $_SESSION['contato'] = $_GET['id'];
+    
+    
+}
 
 add();
-$mensagens = reload($contato);
+$mensagens = reload($_SESSION['contato']);
 //echo "bem vindo ". $_SESSION['usuario'];
 ?>
 
@@ -39,23 +44,29 @@ $mensagens = reload($contato);
         </div>  
     </nav>
     <br>
+    <br>
+    <br>
     
     <?php foreach ($mensagens as $row) : ?>
 
         <div class="container <?php if ($row['de'] != 1){ echo 'darker';} ?>">
-            <p <?php if ($row['de'] == 1){ echo 'class="text-right"';} ?>><strong><?php echo $_SESSION['usuario'] ?></strong></p>
+            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo $_SESSION['usuario']; } else { echo $_SESSION['contato'];} ?></strong></p>
             <!--<img src="f_logo_RGB-Hex-Blue_512.png" alt="Avatar" <?php //if ($row['de'] == 1){ echo 'class="right"';} ?>>-->
-            <p <?php if ($row['de'] == 1){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
+            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
             <span class="time<?php if ($row['de'] != 1){ echo '-left';} else { echo '-right';} ?>">11:00</span>
         </div>
 
     <?php endforeach; ?>
 
+    <br>
+    <br>
+    <br>
+
     <footer class="footer">
             <form action="index.php" method="POST">
                 <div class="row">
-                    <input type="hidden" name="de" value="1">
-                    <input type="hidden" name="para" value="2">
+                    <!--<input type="hidden" name="de" value="<?php //echo $_SESSION['usuario']; ?>">-->
+                    <input type="hidden" name="para" value="<?php echo $_SESSION['contato']; ?>">
                     <div class="col-8">
                         <input class="input input-group" type="text" name="msg">
                     </div>

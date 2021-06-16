@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
-require_once 'inc/database.php';
+require_once 'conversa/functions.php';
+config_login();
 login();
 
 ?>

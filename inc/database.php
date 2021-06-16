@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 function open_database(){
     try{
@@ -54,27 +53,8 @@ function atualizar($contato){
     } catch (PDOException $e){
         return false;
     }
-}
 
-function login(){
-    if (!empty($_POST['email']) and !empty($_POST['senha'])) {
-
-        $usu = $_POST['email'];
-        $senha = $_POST['senha'];
-        
-        $resu = find_usu('usuarios', $usu, $senha);
-
-        if ($resu == false){
-            header('location: index.php');
-        } else {
-            
-            foreach ($resu as $row){
-                $_SESSION['usuario'] = $row['id'];
-            }
-            header('location: ../chat/contatos/index.php');
-        }
-
-    }
+    close_database($database);
 }
 
 function find_usu($table, $usuario, $password){
