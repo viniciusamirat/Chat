@@ -62,7 +62,6 @@ $mensagens = reload($_SESSION['contato']);
     <footer class="footer">
             <form action="index.php" method="POST">
                 <div class="row">
-                    <input type="hidden" name="para" value="<?php echo $_SESSION['contato']; ?>">
                     <div class="col-8">
                         <input class="input input-group" type="text" name="msg">
                     </div>

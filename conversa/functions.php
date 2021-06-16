@@ -21,7 +21,7 @@ function add() {
   
       $mensagem = $_POST['msg'];
       $de = $_SESSION['usuario'];
-      $para = $_POST['para'];
+      $para = $_SESSION['contato'];
       
       save('conversas', $de, $para, $mensagem);
       header('location: index.php');
