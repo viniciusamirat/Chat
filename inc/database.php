@@ -20,14 +20,20 @@ function close_database($conexao){
 }
 
 function save($table, $de, $para, $mensagem){
+    date_default_timezone_set('America/Sao_Paulo');
+    $data = date('Y-m-d');
+    $hora = date('H:i');
+    
     $database = open_database();
 
     try {
-        $sql = $database->prepare("INSERT INTO $table (de, para, mensagem) VALUES (:de, :para, :mensagem)");
+        $sql = $database->prepare("INSERT INTO $table (de, para, mensagem, data_msg, hora) VALUES (:de, :para, :mensagem, :data_msg, :hora)");
         $sql->execute(array(
             ':de'=>$de,
             ':para'=>$para,
-            ':mensagem'=>$mensagem
+            ':mensagem'=>$mensagem,
+            ':data_msg'=>$data,
+            ':hora'=>$hora
         ));
 
 
