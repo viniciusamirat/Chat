@@ -55,7 +55,7 @@ $mensagens = reload($_SESSION['contato']);
             <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
                 <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
                 <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
-                <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>">11:00</span>
+                <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>"><?php echo $row['hora']; ?></span>
             </div>
 
         <?php endforeach; ?>
