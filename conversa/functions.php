@@ -57,7 +57,9 @@ function login(){
     }
 }
 
-
+function name($nome){
+    return nome($nome);
+}
 
 
 

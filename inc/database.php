@@ -96,4 +96,26 @@ function find_contact(){
     close_database($database);
 }
 
+function nome($nome){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT nome FROM usuarios WHERE id = $nome");
+        $sql->execute();
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            foreach ($sql->fetchAll() as $row){
+                $nome_res = $row['nome'];
+            }
+            return $nome_res;
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>

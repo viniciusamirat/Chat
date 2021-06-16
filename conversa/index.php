@@ -28,15 +28,13 @@ $mensagens = reload($_SESSION['contato']);
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
-        <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px;">
+        <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+        <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Perfil</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sair</a>
                 </li>
@@ -50,7 +48,7 @@ $mensagens = reload($_SESSION['contato']);
     <?php foreach ($mensagens as $row) : ?>
 
         <div class="container <?php if ($row['de'] != 1){ echo 'darker';} ?>">
-            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo $_SESSION['usuario']; } else { echo $_SESSION['contato'];} ?></strong></p>
+            <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
             <!--<img src="f_logo_RGB-Hex-Blue_512.png" alt="Avatar" <?php //if ($row['de'] == 1){ echo 'class="right"';} ?>>-->
             <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
             <span class="time<?php if ($row['de'] != 1){ echo '-left';} else { echo '-right';} ?>">11:00</span>
