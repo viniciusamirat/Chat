@@ -42,7 +42,7 @@ function atualizar($contato){
     $database = open_database();
 
     try {
-        $search = $database->prepare("SELECT * FROM conversas WHERE de = ".$_SESSION['usuario']." AND para = $contato OR para = ".$_SESSION['usuario']." AND de = $contato");
+        $search = $database->prepare("SELECT * FROM conversas WHERE de = ".$_SESSION['usuario']." AND para = $contato OR para = ".$_SESSION['usuario']." AND de = $contato ORDER BY id");
         $search->execute();
 
         if ($search->rowCount() <= 0){
