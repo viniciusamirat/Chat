@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function open_database(){
     try{
@@ -38,11 +39,11 @@ function save($table, $de, $para, $mensagem){
     close_database($database);
 }
 
-function atualizar(){
+function atualizar($contato){
     $database = open_database();
 
     try {
-        $search = $database->prepare("SELECT * FROM conversas");
+        $search = $database->prepare("SELECT * FROM conversas WHERE de = ".$_SESSION['usuario']." AND para = $contato OR para = ".$_SESSION['usuario']." AND de = $contato");
         $search->execute();
 
         if ($search->rowCount() <= 0){
@@ -66,11 +67,11 @@ function login(){
         if ($resu == false){
             header('location: index.php');
         } else {
-            session_start();
+            
             foreach ($resu as $row){
                 $_SESSION['usuario'] = $row['id'];
             }
-            header('location: ../chat/conversa/index.php');
+            header('location: ../chat/contatos/index.php');
         }
 
     }
@@ -95,5 +96,24 @@ function find_usu($table, $usuario, $password){
     close_database($database);
 }
 
+function find_contact(){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT id, nome FROM usuarios WHERE NOT id = ".$_SESSION['usuario'].";");
+        $sql->execute();
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            return $sql->fetchAll();
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 
 ?>

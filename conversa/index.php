@@ -1,9 +1,10 @@
 <?php 
 require_once('functions.php');
 
+$contato = $_GET['id'];
+
 add();
-$mensagens = reload();
-session_start();
+$mensagens = reload($contato);
 //echo "bem vindo ". $_SESSION['usuario'];
 ?>
 
@@ -30,6 +31,9 @@ session_start();
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sair</a>
                 </li>
             </ul>
         </div>  

@@ -17,11 +17,13 @@ function add() {
     }
 }
 
-function reload(){
-    return atualizar();
+function reload($contato){
+    return atualizar($contato);
 }
 
-
+function procurar_contatos(){
+    return find_contact();
+}
 
 
 
