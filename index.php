@@ -38,7 +38,7 @@ login();
         <h2><strong>Login</strong></h2>
         <form action="index.php" method="POST">
             <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
-            <input class="input input-group" type="text" name="senha" placeholder="Senha" required><br>
+            <input class="input input-group" type="password" name="senha" placeholder="Senha" required><br>
             <input class="btn btn-success" type="submit" value="Entrar">
             <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
         </form>
