@@ -6,6 +6,14 @@ if (!empty($_GET['id'])) {
 }
 
 $resu = procurar_contato($_SESSION['contato']);
+
+foreach ($resu as $row){
+    $nome = $row['nome'];
+    $email = $row['email'];
+    $foto = $row['foto'];
+}
+
+
 ?>
 
 
@@ -26,22 +34,20 @@ $resu = procurar_contato($_SESSION['contato']);
         <a href="../conversa/index.php?id=<?php echo $_SESSION['contato']; ?>">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
-        <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
+        <span style="color: white;"><strong><?php echo $nome//name($_SESSION['contato']); ?></strong></span>
     </nav>
     <br>
     <br>
     <br>
 
     <div class="container">
-        <img src="../cadastro/avatar/1.png" class="card-img-top">
+        <img src="../cadastro/avatar/<?php echo $foto; ?>" class="card-img-top">
     </div>
     <br>
     <div class="container" style="text-align: center; font-weight: bold;">
-        <?php foreach ($resu as $row) : ?>
-            <p><?php echo $row['nome']; ?></p>
-            <p><?php echo $row['email']; ?></p>
+        <p><?php echo $nome; ?></p>
+        <p><?php echo $email; ?></p>
 
-        <?php endforeach; ?>
     </div>
     
 </body>
