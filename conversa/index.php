@@ -40,7 +40,7 @@ foreach ($resu as $row){
             <img src="../cadastro/avatar/<?php echo $foto; ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         </a>
 
-        <a href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
+        <a style="text-decoration: none;" href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
             <span style="color: white;"><strong><?php echo $nome; ?></strong></span>
         </a>
         
