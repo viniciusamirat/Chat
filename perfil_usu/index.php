@@ -1,6 +1,14 @@
 <?php
 require_once('../conversa/functions.php');
 config();
+
+$resu = procurar_contato($_SESSION['usuario']);
+
+foreach ($resu as $row){
+    $nome = $row['nome'];
+    $email = $row['email'];
+    $foto = $row['foto'];
+}
 ?>
 
 
@@ -21,7 +29,20 @@ config();
         <a href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
-        <span style="color: white;"><strong><?php echo name($_SESSION['usuario']); ?></strong></span>
+        <span style="color: white;"><strong>Meu perfil</strong></span>
     </nav>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <img src="../cadastro/avatar/<?php echo $foto; ?>" class="card-img-top">
+    </div>
+    <br>
+    <div class="container" style="text-align: center; font-weight: bold;">
+        <p><?php echo $nome; ?></p>
+        <p><?php echo $email; ?></p>
+
+    </div>
 </body>
 </html>
