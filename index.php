@@ -13,34 +13,35 @@ login();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/form.css">
+    <!--<link rel="stylesheet" href="css/form.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Login</title>
 </head>
 <body>
-    <div class="login">
-        <div class="container">
-            <form action="index.php" method="POST">
-                <div class="row">
-                    <h2 style="text-align:center">Login na rede social do amirat</h2>
-                    <div class="col" style="text-align: center;">
-                        <input type="text" class="texto" name="email" placeholder="Email" required>
-                        <input type="password" class="texto" name="senha" placeholder="Senha" required>
-                        <input type="submit"  class="texto" value="Login">
-                    </div>
-                </div>
-            </form>
-        </div>
+    <nav class="navbar navbar-expand-md bg-info navbar-dark">
+    <a class="navbar-brand" href="#"><strong>Chat</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+            </ul>
+        </div>  
+    </nav>
 
-        <div class="bottom-container">
-            <div class="row">
-                <div class="col">
-                    <a href="#" style="color:white" class="btn">Se cadastrar</a>
-                </div>
-                <div class="col">
-                    <a href="#" style="color:white" class="btn">Esqueceu a senha?</a>
-                </div>
-            </div>
-        </div>
+    <div class="container" style="text-align: center;">
+        <h2><strong>Login</strong></h2>
+        <form action="index.php" method="POST">
+            <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
+            <input class="input input-group" type="text" name="senha" placeholder="Senha" required><br>
+            <input class="btn btn-success" type="submit" value="Entrar">
+            <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
+        </form>
     </div>
     
 </body>
