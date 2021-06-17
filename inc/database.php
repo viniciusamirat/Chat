@@ -86,7 +86,7 @@ function find_contacts(){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = ".$_SESSION['usuario'].";");
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = ".$_SESSION['usuario']." ORDER BY nome;");
         $sql->execute();
 
         if ($sql->rowCount() < 1){
