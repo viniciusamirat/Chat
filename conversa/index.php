@@ -10,7 +10,14 @@ if (!empty($_GET['id'])) {
 
 add();
 $mensagens = reload($_SESSION['contato']);
-//echo "bem vindo ". $_SESSION['usuario'];
+
+$resu = procurar_contato($_SESSION['contato']);
+
+foreach ($resu as $row){
+    $nome = $row['nome'];
+    $foto = $row['foto'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +37,11 @@ $mensagens = reload($_SESSION['contato']);
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
         <a href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
-            <img src="../cadastro/avatar/1.png" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+            <img src="../cadastro/avatar/<?php echo $foto; ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         </a>
 
         <a href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
-            <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
+            <span style="color: white;"><strong><?php echo $nome; ?></strong></span>
         </a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -56,7 +63,7 @@ $mensagens = reload($_SESSION['contato']);
         <?php foreach ($mensagens as $row) : ?>
 
             <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
-                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo name($_SESSION['contato']);} ?></strong></p>
+                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo $nome;} ?></strong></p>
                 <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
                 <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>"><?php echo $row['hora']; ?></span>
             </div>
