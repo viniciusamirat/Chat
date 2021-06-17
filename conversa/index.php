@@ -35,7 +35,7 @@ foreach ($resu as $row){
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
-        <a href="../contatos/">
+        <a style="text-decoration: none;" href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
             <img src="../cadastro/avatar/<?php echo $foto; ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         </a>
