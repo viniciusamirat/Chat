@@ -76,24 +76,16 @@ foreach ($resu as $row){
     <br>
 
     <footer class="footer">
-            <form action="index.php" method="POST">
-                <!--<div class="row">
-                    <div class="col-8">
-                        <input class="input input-group" type="text" name="msg">
-                    </div>
-                    <div class="col-4">
-                        <input class="btn btn-primary" type="submit" value="Enviar">
-                    </div>-->
-                    
+            <form action="index.php#fim" method="POST">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="msg" placeholder="Escreva aqui">
+                    <input type="text" class="form-control" name="msg" placeholder="Escreva aqui" autofocus>
                     <div class="input-group-append">
                         <button class="btn btn-success" type="submit">Enviar</button>
                     </div>
                 </div>
-                
             </form>
     </footer>
+    <a name="fim"></a>
 </body>
 </html>

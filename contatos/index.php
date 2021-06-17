@@ -40,7 +40,7 @@ $resu = procurar_contatos();
         <?php if ($resu) : ?>
             <ul class="list-group">
                 <?php foreach ($resu as $row) : ?>
-                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['id']; ?>">
+                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['id']; ?>#fim">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
                             <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
