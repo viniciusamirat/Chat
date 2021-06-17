@@ -5,6 +5,7 @@ if (!empty($_GET['id'])) {
     $_SESSION['contato'] = $_GET['id'];
 }
 
+$resu = procurar_contato($_SESSION['contato']);
 ?>
 
 
@@ -34,7 +35,14 @@ if (!empty($_GET['id'])) {
     <div class="container">
         <img src="../cadastro/avatar/1.png" class="card-img-top">
     </div>
+    <br>
+    <div class="container" style="text-align: center; font-weight: bold;">
+        <?php foreach ($resu as $row) : ?>
+            <p><?php echo $row['nome']; ?></p>
+            <p><?php echo $row['email']; ?></p>
+
+        <?php endforeach; ?>
+    </div>
     
-    <p><?php echo name($_SESSION['contato']); ?></p>
 </body>
 </html>

@@ -33,7 +33,11 @@ function reload($contato){
 }
 
 function procurar_contatos(){
-    return find_contact();
+    return find_contacts();
+}
+
+function procurar_contato($contact){
+    return find_contact($contact);
 }
 
 function login(){
@@ -60,4 +64,6 @@ function login(){
 function name($nome){
     return nome($nome);
 }
+
+
 ?>

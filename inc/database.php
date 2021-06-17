@@ -82,11 +82,11 @@ function find_usu($table, $usuario, $password){
     close_database($database);
 }
 
-function find_contact(){
+function find_contacts(){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT id, nome FROM usuarios WHERE NOT id = ".$_SESSION['usuario'].";");
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = ".$_SESSION['usuario'].";");
         $sql->execute();
 
         if ($sql->rowCount() < 1){
@@ -97,7 +97,27 @@ function find_contact(){
         
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
-    }
+    }    
+
+    close_database($database);
+}
+
+function find_contact($contact){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE id = $contact");
+        $sql->execute();
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            return $sql->fetchAll();
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }    
 
     close_database($database);
 }
