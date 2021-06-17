@@ -17,7 +17,7 @@ config();
     <title>Meu perfil</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
+    <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
         <a href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>

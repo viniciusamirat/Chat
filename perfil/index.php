@@ -21,11 +21,20 @@ if (!empty($_GET['id'])) {
     <title>Perfil</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
+    <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
         <a href="../conversa/index.php?id=<?php echo $_SESSION['contato']; ?>">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
         <span style="color: white;"><strong><?php echo name($_SESSION['contato']); ?></strong></span>
     </nav>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <img src="../cadastro/avatar/1.png" class="card-img-top">
+    </div>
+    
+    <p><?php echo name($_SESSION['contato']); ?></p>
 </body>
 </html>

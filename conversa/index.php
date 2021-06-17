@@ -27,10 +27,10 @@ $mensagens = reload($_SESSION['contato']);
     <title>Chat</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="position: fixed; width: 100%;">
+    <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
         <a href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
-            <img src="../image/avatar.jpg" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+            <img src="../cadastro/avatar/1.png" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
         </a>
 
         <a href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
