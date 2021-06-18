@@ -144,4 +144,31 @@ function nome($nome){
 
     close_database($database);
 }
+
+function cadastrar_usu($table, $foto, $nome, $email, $senha){
+    date_default_timezone_set('America/Sao_Paulo');
+    $data = date('Y-m-d');
+    $hora = date('H:i');
+    
+    $database = open_database();
+
+    try {
+        $sql = $database->prepare("INSERT INTO $table (foto, nome, email, senha, data_cadastro, hora_cadastro) VALUES (:foto, :nome, :email, :senha, :data_cadastro, :hora_cadastro)");
+        $sql->execute(array(
+            ':foto'=>$foto,
+            ':nome'=>$nome,
+            ':email'=>$email,
+            ':senha'=>$senha,
+            ':data_cadastro'=>$data,
+            ':hora_cadastro'=>$hora
+        ));
+
+        return true;
+
+    } catch (PSOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>

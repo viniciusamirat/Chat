@@ -65,5 +65,23 @@ function name($nome){
     return nome($nome);
 }
 
+function cadastrar(){
+    if (!empty($_POST['nome']) and !empty($_POST['email']) and !empty($_POST['senha'])  and !empty($_POST['foto'])) {
 
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $foto = $_POST['foto'];
+        
+        $resu = cadastrar_usu('usuarios', $foto, $nome, $email, $senha);
+
+        
+        if ($resu == false){
+            header('location: index.php');
+        } else {
+            header('location: ../index.php');
+        }
+
+    }
+}
 ?>
