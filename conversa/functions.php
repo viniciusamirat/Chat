@@ -41,4 +41,13 @@ function name($nome){
     return nome($nome);
 }
 
+function autenticar(){
+    if (!isset($_SESSION['usuario'])){
+        $_SESSION['erro'] = "Nenhum usuário logado.";
+        header('location: ../inc/exit.php');
+    } else {
+        echo "hii";
+    }
+}
+
 ?>

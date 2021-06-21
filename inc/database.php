@@ -101,7 +101,7 @@ function find_contacts(){
 
         if ($sql->rowCount() < 1){
             return false;
-            $_SESSION['erro'] = "Nenhum usuário encontrado."
+            $_SESSION['erro'] = "Nenhum usuário encontrado.";
         } else {
             return $sql->fetchAll();
         }

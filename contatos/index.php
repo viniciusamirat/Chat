@@ -1,5 +1,6 @@
 <?php
 require_once('../conversa/functions.php');
+autenticar();
 config();
 $resu = procurar_contatos();
 ?>
