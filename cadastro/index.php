@@ -1,8 +1,6 @@
 <?php
 require_once '../conversa/functions.php';
 config();
-
-cadastrar();
 ?>
 
 
@@ -13,7 +11,6 @@ cadastrar();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="css/form.css">-->
     <script src="js.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,7 +20,10 @@ cadastrar();
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
-    <a class="navbar-brand" href="#"><strong>Chat</strong></a>
+    <a style="text-decoration: none;" href="../index.php">
+        <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
+    </a>
+    <a class="navbar-brand" href="#"><strong>Cadastrar</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,18 +31,30 @@ cadastrar();
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sobre</a>
+                </li>
             </ul>
         </div>  
     </nav>
+    <br>
+    
 
     <div class="container" style="text-align: center;">
+    
+        <?php if (isset($_SESSION['erro'])) : ?>
+            
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><?php echo $_SESSION['erro']; ?></strong>
+                <?php unset($_SESSION['erro']); ?>
+            </div>
+        <?php endif; ?>
+
         <h2><strong>Cadastrar novo usuário</strong></h2>
-        <form action="index.php" method="POST">
+        <form action="cadastrar.php" method="POST">
             <input class="input input-group" type="text" name="nome" placeholder="Nome" required><br>
             <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
             <input class="input input-group" type="password" name="senha" placeholder="Senha" required><br>
             <input type="hidden" name="foto" id="foto" value="">
-            <!--<div name="foto" id="foto"></div>-->
 
             <h3><strong>Escolha seu avatar</strong></h3>
 

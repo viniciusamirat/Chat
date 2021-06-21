@@ -17,14 +17,11 @@ function add() {
 
     if (!empty($_POST['msg'])) {
       
-      //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
-  
       $mensagem = $_POST['msg'];
       $de = $_SESSION['usuario'];
       $para = $_SESSION['contato'];
       
       save('conversas', $de, $para, $mensagem);
-      //header('location: index.php');
     }
 }
 
@@ -40,48 +37,8 @@ function procurar_contato($contact){
     return find_contact($contact);
 }
 
-function login(){
-    if (!empty($_POST['email']) and !empty($_POST['senha'])) {
-
-        $usu = $_POST['email'];
-        $senha = $_POST['senha'];
-        
-        $resu = find_usu('usuarios', $usu, $senha);
-
-        if ($resu == false){
-            header('location: index.php');
-        } else {
-            
-            foreach ($resu as $row){
-                $_SESSION['usuario'] = $row['id'];
-            }
-            header('location: ../chat/contatos/index.php');
-        }
-
-    }
-}
-
 function name($nome){
     return nome($nome);
 }
 
-function cadastrar(){
-    if (!empty($_POST['nome']) and !empty($_POST['email']) and !empty($_POST['senha'])  and !empty($_POST['foto'])) {
-
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $foto = $_POST['foto'];
-        
-        $resu = cadastrar_usu('usuarios', $foto, $nome, $email, $senha);
-
-        
-        if ($resu == false){
-            header('location: index.php');
-        } else {
-            header('location: ../index.php');
-        }
-
-    }
-}
 ?>
