@@ -50,7 +50,11 @@ $resu = procurar_contatos();
                 <?php endforeach; ?>
             </ul>
         <?php else : ?>
-            <p>Nenhum contato encontrado</p>
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><?php echo $_SESSION['erro']; ?></strong>
+                <?php unset($_SESSION['erro']); ?>
+            </div>
         <?php endif; ?>
     </div>
 </body>
