@@ -31,10 +31,10 @@ foreach ($resu as $row){
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
-        <a href="../conversa/index.php?id=<?php echo $_SESSION['contato']; ?>">
+        <a href="../conversa/index.php?id=<?php echo $_SESSION['contato']; ?>#fim">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
-        <span style="color: white;"><strong><?php echo $nome//name($_SESSION['contato']); ?></strong></span>
+        <span style="color: white;"><strong><?php echo $nome ?></strong></span>
     </nav>
     <br>
     <br>
