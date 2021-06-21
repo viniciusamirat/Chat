@@ -67,8 +67,11 @@ function find_usu($table, $usuario, $password){
     $database = open_database();
 
     try {
-        $search = $database->prepare("SELECT * FROM $table WHERE email = '$usuario' and senha = '$password'");
-        $search->execute();
+        $search = $database->prepare("SELECT * FROM $table WHERE email = :email and senha = :senha");
+        $search->execute(array(
+            ':email'=>$usuario,
+            ':senha'=>$password
+        ));
 
         if ($search->rowCount() <= 0){
             return false;
