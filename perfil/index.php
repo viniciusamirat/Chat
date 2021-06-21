@@ -1,5 +1,6 @@
 <?php
 require_once('../conversa/functions.php');
+autenticar();
 config();
 if (!empty($_GET['id'])) {
     $_SESSION['contato'] = $_GET['id'];

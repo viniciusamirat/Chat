@@ -1,5 +1,6 @@
 <?php 
 require_once('functions.php');
+autenticar();
 config();
 if (!empty($_GET['id'])) {
 

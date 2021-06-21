@@ -54,6 +54,15 @@ config_login();
             </div>
         <?php endif; ?>
 
+        <?php if (isset($_SESSION['autenticar'])) : ?>
+            
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><?php echo $_SESSION['autenticar']; ?></strong>
+                <?php unset($_SESSION['autenticar']); ?>
+            </div>
+        <?php endif; ?>
+
         <h2><strong>Login</strong></h2>
         <form action="login.php" method="POST">
             <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
