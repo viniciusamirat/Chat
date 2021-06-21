@@ -45,7 +45,7 @@ $resu = procurar_contatos();
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
                             <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
-                            <span class="badge badge-primary badge-pill">12</span>
+                            <!--<span class="badge badge-primary badge-pill">12</span>-->
                         </li>
                     </a>
                 <?php endforeach; ?>
