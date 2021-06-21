@@ -76,16 +76,39 @@ foreach ($resu as $row){
     <br>
 
     <footer class="footer">
-            <form action="index.php#fim" method="POST">
+            <form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="msg" placeholder="Escreva aqui" autofocus>
+                    <input type="text" class="form-control" oninput="botao(this)" name="msg" placeholder="Escreva aqui" autofocus>
                     <div class="input-group-append">
-                        <button class="btn btn-success" type="submit">Enviar</button>
+                        <button class="btn" id="btn" type="submit">Atualizar</button>
                     </div>
                 </div>
             </form>
     </footer>
     <a name="fim"></a>
+    <script>
+        let btn = window.document.getElementById('btn');
+        btn.style.background = "blue";
+        btn.style.color = "white";
+        function botao(i){
+   
+            var v = i.value;
+            
+            //i.setAttribute("maxlength", "14");
+            //if (v.length == 3 || v.length == 7) i.value += ".";
+            //if (v.length == 11) i.value += "-";
+
+            if (v.length >= 1){
+                btn.innerHTML = "Enviar";
+                btn.style.background = "green";
+            } else {
+                btn.innerHTML = "Atualizar";
+                btn.style.background = "blue";
+            }
+
+
+        }
+    </script>
 </body>
 </html>

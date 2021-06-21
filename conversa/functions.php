@@ -24,7 +24,7 @@ function add() {
       $para = $_SESSION['contato'];
       
       save('conversas', $de, $para, $mensagem);
-      header('location: index.php');
+      //header('location: index.php');
     }
 }
 
