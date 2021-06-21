@@ -48,8 +48,13 @@ function atualizar($contato){
     $database = open_database();
 
     try {
-        $search = $database->prepare("SELECT * FROM conversas WHERE de = ".$_SESSION['usuario']." AND para = $contato OR para = ".$_SESSION['usuario']." AND de = $contato ORDER BY id");
-        $search->execute();
+        $search = $database->prepare("SELECT * FROM conversas WHERE de = :de1 AND para = :para1 OR para = :para2 AND de = :de2 ORDER BY id");
+        $search->execute(array(
+            ':de1'=>$_SESSION['usuario'],
+            ':para1'=>$contato,
+            ':para2'=>$_SESSION['usuario'],
+            ':de2'=>$contato
+        ));
 
         if ($search->rowCount() <= 0){
             return false;
@@ -89,8 +94,10 @@ function find_contacts(){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = ".$_SESSION['usuario']." ORDER BY nome;");
-        $sql->execute();
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = :id ORDER BY nome;");
+        $sql->execute(array(
+            ':id'=>$_SESSION['usuario']
+        ));
 
         if ($sql->rowCount() < 1){
             return false;
@@ -109,8 +116,10 @@ function find_contact($contact){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT * FROM usuarios WHERE id = $contact");
-        $sql->execute();
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $sql->execute(array(
+            ':id'=>$contact
+        ));
 
         if ($sql->rowCount() < 1){
             return false;
@@ -129,8 +138,10 @@ function nome($nome){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT nome FROM usuarios WHERE id = $nome");
-        $sql->execute();
+        $sql = $database->prepare("SELECT nome FROM usuarios WHERE id = :id");
+        $sql->execute(array(
+            ':id'=>$nome
+        ));
 
         if ($sql->rowCount() < 1){
             return false;
