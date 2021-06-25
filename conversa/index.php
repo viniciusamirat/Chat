@@ -1,4 +1,6 @@
 <?php 
+
+
 require_once('functions.php');
 autenticar();
 config();
@@ -27,6 +29,7 @@ foreach ($resu as $row){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="5">-->
     <link rel="stylesheet" href="../css/css.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -75,20 +78,26 @@ foreach ($resu as $row){
     <br>
     <br>
     <br>
+    <br>
 
-    <footer class="footer">
+    <footer class="footer" style="margin-bottom: 30px;">
             <form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" oninput="botao(this)" name="msg" placeholder="Escreva aqui" autofocus>
+                    <!--<input type="text" class="form-control" name="msg" placeholder="Escreva aqui">-->
+                    <input type="text" class="form-control" oninput="botao(this)" name="msg" placeholder="Escreva aqui">
                     <div class="input-group-append">
                         <button class="btn" id="btn" type="submit">Atualizar</button>
+                        <!--<button class="btn btn-success" type="submit">Enviar</button>-->
                     </div>
                 </div>
             </form>
     </footer>
     <a name="fim"></a>
     <script>
+        //var heightPage = document.body.scrollHeight;
+        //window.scrollTo(0 , heightPage);
+        
         let btn = window.document.getElementById('btn');
         btn.style.background = "blue";
         btn.style.color = "white";
