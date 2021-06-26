@@ -41,6 +41,10 @@ function name($nome){
     return nome($nome);
 }
 
+function avatar($contato){
+    return foto($contato);
+}
+
 function autenticar(){
     if (!isset($_SESSION['usuario'])){
         $_SESSION['autenticar'] = "Nenhum usuário logado.";

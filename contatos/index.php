@@ -16,11 +16,11 @@ $resu = procurar_contatos();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Usuários</title>
+    <title>Contatos</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
-    <a class="navbar-brand" href="index.php"><strong>Usuários</strong></a>
+    <a class="navbar-brand" href="index.php"><strong>Contatos</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,10 +41,10 @@ $resu = procurar_contatos();
         <?php if ($resu) : ?>
             <ul class="list-group">
                 <?php foreach ($resu as $row) : ?>
-                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['id']; ?>#fim">
+                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['contato']; ?>#fim">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
-                            <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
+                            <img src="../cadastro/avatar/<?php echo avatar($row['contato']); ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
+                            <section style="margin-left: 15px; margin-right: auto;"><?php echo name($row['contato']); ?></section>
                             <!--<span class="badge badge-primary badge-pill">12</span>-->
                         </li>
                     </a>

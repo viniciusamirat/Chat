@@ -94,7 +94,7 @@ function find_contacts(){
     $database = open_database();
     
     try{
-        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = :id ORDER BY nome;");
+        $sql = $database->prepare("SELECT contato FROM contatos WHERE usuario = :id");
         $sql->execute(array(
             ':id'=>$_SESSION['usuario']
         ));
@@ -105,6 +105,18 @@ function find_contacts(){
         } else {
             return $sql->fetchAll();
         }
+    /*try{
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = :id ORDER BY nome;");
+        $sql->execute(array(
+            ':id'=>$_SESSION['usuario']
+        ));
+
+        if ($sql->rowCount() < 1){
+            return false;
+            $_SESSION['erro'] = "Nenhum usuário encontrado.";
+        } else {
+            return $sql->fetchAll();
+        }*/
         
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
@@ -151,6 +163,31 @@ function nome($nome){
                 $nome_res = $row['nome'];
             }
             return $nome_res;
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
+
+function foto($contato){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT foto FROM usuarios WHERE id = :id");
+        $sql->execute(array(
+            ':id'=>$contato
+        ));
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            foreach ($sql->fetchAll() as $row){
+                $foto = $row['foto'];
+            }
+            return $foto;
         }
         
     } catch (PDOException $e){
