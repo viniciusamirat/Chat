@@ -2,7 +2,7 @@
 require_once('../conversa/functions.php');
 autenticar();
 config();
-$resu = procurar_contatos();
+
 ?>
 
 
@@ -16,27 +16,25 @@ $resu = procurar_contatos();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Contatos</title>
-
+    <title>Adicionar contato</title>
     <style>
-        .novo{
-            margin-left: auto;
-            margin-right: 45px;
-            width: 5%;
+        .sombra{
+            border-radius: 10px; 
+            box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.336);
+            width: 90%;
         }
-
-        footer{
-            position: fixed;
-            bottom:30px;
-            width: 100%;
-
+        
+        .espaco{
+            padding: 5px;
         }
-
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
-    <a class="navbar-brand" href="#"><strong>Contatos</strong></a>
+    <a style="text-decoration: none;" href="index.php">
+        <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
+    </a>
+    <a class="navbar-brand" href="#"><strong>Adicionar contato</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,22 +49,39 @@ $resu = procurar_contatos();
             </ul>
         </div>  
     </nav>
+    <br>
 
+    <div class="container sombra">
+        <div class="container espaco">
+            <form action="pesquisa.php" method="post">
+                <h3 style="text-align: center;">Pesquise com o email do contato</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="usuario" placeholder="Email">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="submit">&#128269;</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
 
     <div class="container mt-3">
-        <?php if ($resu) : ?>
+        <?php if (isset($_SESSION['resultado'])) : ?>
+            <?php $resu = $_SESSION['resultado']; ?>
+            <?php unset($_SESSION['resultado']); ?>
             <ul class="list-group">
                 <?php foreach ($resu as $row) : ?>
-                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['contato']; ?>#fim">
+                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['id']; ?>#fim">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <img src="../cadastro/avatar/<?php echo avatar($row['contato']); ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
-                            <section style="margin-left: 15px; margin-right: auto;"><?php echo name($row['contato']); ?></section>
+                            <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
+                            <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
                             <!--<span class="badge badge-primary badge-pill">12</span>-->
                         </li>
                     </a>
                 <?php endforeach; ?>
             </ul>
-        <?php else : ?>
+        <?php elseif (isset($_SESSION['erro'])) : ?>
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong><?php echo $_SESSION['erro']; ?></strong>
@@ -75,11 +90,5 @@ $resu = procurar_contatos();
         <?php endif; ?>
     </div>
 
-    <footer>
-        <div class="novo">
-            <button type="button" class="btn btn-success" onclick="window.location.href='addContato.php'">+</button>
-        </div>
-        
-    </footer>
 </body>
 </html>

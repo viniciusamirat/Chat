@@ -30,6 +30,9 @@ function reload($contato){
 }
 
 function procurar_contatos(){
+    if (!find_contacts()){
+        $_SESSION['erro'] = "Você ainda não tem nenhum contato.";
+    }
     return find_contacts();
 }
 

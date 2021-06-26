@@ -101,7 +101,7 @@ function find_contacts(){
 
         if ($sql->rowCount() < 1){
             return false;
-            $_SESSION['erro'] = "Nenhum usuário encontrado.";
+            //$_SESSION['erro'] = "Nenhum usuário encontrado.";
         } else {
             return $sql->fetchAll();
         }
@@ -218,6 +218,29 @@ function cadastrar_usu($table, $foto, $nome, $email, $senha){
         return true;
 
     } catch (PSOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
+
+function procurar($usuario){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT * FROM usuarios WHERE email = :email and id != :id");
+        $sql->execute(array(
+            ':email'=>$usuario,
+            ':id'=>$_SESSION['usuario']
+        ));
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            return $sql->fetchAll();
+        }
+        
+    } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
     }
 
