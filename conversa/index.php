@@ -81,7 +81,7 @@ foreach ($resu as $row){
     <br>
 
     <footer class="footer" style="margin-bottom: 30px;">
-            <form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST">
+            <form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST" autocomplete="off">
                 </div>
                 <div class="input-group mb-3">
                     <!--<input type="text" class="form-control" name="msg" placeholder="Escreva aqui">-->

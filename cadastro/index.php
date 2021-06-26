@@ -78,6 +78,7 @@ config();
             <input class="btn btn-success" type="submit" value="Cadastrar">
         </form>
         <br>
+        <br>
     </div>
 </body>
 </html>
