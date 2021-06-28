@@ -36,20 +36,15 @@ $resu = procurar_contatos();
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
-    <a class="navbar-brand" href="#"><strong>Contatos</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="text-align: right;">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../perfil_usu/">Meu perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../inc/exit.php">Sair</a>
-                </li>
-            </ul>
-        </div>  
+        <a class="navbar-brand" href="#"><strong>Contatos</strong></a>
+        <div class="dropdown">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="../perfil_usu/">Meu perfil</a>
+                <a class="dropdown-item" href="../inc/exit.php">Sair</a>
+            </div>
+        </div>
     </nav>
 
 

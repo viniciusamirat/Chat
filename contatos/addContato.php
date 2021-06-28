@@ -31,20 +31,17 @@ config();
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
-    <a style="text-decoration: none;" href="index.php">
-        <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
-    </a>
-    <a class="navbar-brand" href="#"><strong>Adicionar contato</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="text-align: right;">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../inc/exit.php">Sair</a>
-                </li>
-            </ul>
-        </div>  
+        <a style="text-decoration: none;" href="index.php">
+            <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
+        </a>
+        <a class="navbar-brand" href="#"><strong>Adicionar contato</strong></a>
+        <div class="dropdown">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="../inc/exit.php">Sair</a>
+            </div>
+        </div>
     </nav>
     <br>
 

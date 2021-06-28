@@ -41,23 +41,20 @@ foreach ($resu as $row){
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
         <a style="text-decoration: none;" href="../contatos/">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
-            <img src="../cadastro/avatar/<?php echo $foto; ?>" alt="Avatar" style="width: 50px; height: 50px; border-radius: 100%;">
+            <img src="../cadastro/avatar/<?php echo $foto; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
         </a>
 
         <a style="text-decoration: none;" href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">
             <span style="color: white;"><strong><?php echo $nome; ?></strong></span>
         </a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="text-align: right;">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">Ver perfil</a>
-                </li>
-            </ul>
-        </div>  
+        <div class="dropdown">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="../perfil/index.php?id=<?php echo $_SESSION['contato']; ?>">Ver perfil</a>
+            </div>
+        </div>
     </nav>
     <br>
     <br>
