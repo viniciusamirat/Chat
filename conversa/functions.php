@@ -12,19 +12,6 @@ function config(){
     require_once DB_API;
 }
 
-
-function add() {
-
-    if (!empty($_POST['msg'])) {
-      
-      $mensagem = $_POST['msg'];
-      $de = $_SESSION['usuario'];
-      $para = $_SESSION['contato'];
-      
-      save('conversas', $de, $para, $mensagem);
-    }
-}
-
 function reload($contato){
     return atualizar($contato);
 }

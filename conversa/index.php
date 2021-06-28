@@ -11,7 +11,7 @@ if (!empty($_GET['id'])) {
     
 }
 
-add();
+
 $mensagens = reload($_SESSION['contato']);
 
 $resu = procurar_contato($_SESSION['contato']);
@@ -80,7 +80,8 @@ foreach ($resu as $row){
     <br>
 
     <footer class="footer" style="margin-bottom: 30px;">
-            <form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST" autocomplete="off">
+            <!--<form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST" autocomplete="off">-->
+            <form action="send.php" method="POST" autocomplete="off">
                 </div>
                 <div class="input-group mb-3">
                     <!--<input type="text" class="form-control" name="msg" placeholder="Escreva aqui">-->
