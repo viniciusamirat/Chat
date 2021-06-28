@@ -269,4 +269,46 @@ function isContact($usuario, $contato){
 
     close_database($database);
 }
+
+function addContact($usuario, $contato){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("INSERT INTO contatos (usuario, contato) VALUES (:usu, :cont)");
+        $sql->execute(array(
+            ':usu'=>$usuario,
+            ':cont'=>$contato
+        ));
+
+        if ($sql->rowCount() < 1){
+            echo "Erro ao adicionar contato";
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
+
+function removeContact($usuario, $contato){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("DELETE FROM contatos WHERE usuario = :usu and contato = :cont");
+        $sql->execute(array(
+            ':usu'=>$usuario,
+            ':cont'=>$contato
+        ));
+
+        if ($sql->rowCount() < 1){
+            echo "Erro ao remover contato";
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>

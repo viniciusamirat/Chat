@@ -34,7 +34,6 @@ $resu2 = isContato($_SESSION['usuario'], $_SESSION['contato']);
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
-        <!--<a href="../conversa/index.php?id=<?php //echo $_SESSION['contato']; ?>#fim">-->
         <img onclick="history.go(-1);" src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         <span style="color: white;"><strong><?php echo $nome ?></strong></span>
     </nav>
@@ -47,20 +46,22 @@ $resu2 = isContato($_SESSION['usuario'], $_SESSION['contato']);
     </div>
     <br>
 
-    <?php if ($resu2) : ?>
+    <form action="add.php" method="post" id="form">
+        <input type="hidden" name="contato" id="contato" value="">
+        <?php if ($resu2) : ?>
 
-        <div class="container" style="text-align: center;">
-            <button class="btn btn-success btn-sm">Adicionado &check;</button>
-        </div>
+            <div class="container" style="text-align: center;">
+                <button class="btn btn-success btn-sm" onclick="remove()">Adicionado &check;</button>
+            </div>
 
-    <?php else : ?>
+        <?php else : ?>
 
-        <div class="container" style="text-align: center;">
-            <button class="btn btn-primary btn-sm">Adicionar</button>
-        </div>
+            <div class="container" style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="add()">Adicionar</button>
+            </div>
 
-    <?php endif; ?>
-
+        <?php endif; ?>
+    </form>
     <br>
     <div class="container" style="text-align: center; font-weight: bold;">
         <p><?php echo $nome; ?></p>
@@ -68,5 +69,18 @@ $resu2 = isContato($_SESSION['usuario'], $_SESSION['contato']);
 
     </div>
     
+    <script>
+        let campo = window.document.getElementById("contato");
+
+        function remove(){
+            campo.value = "nao";
+            document.getElementById("form").submit();
+        }
+
+        function add(){
+            campo.value = "sim";
+            document.getElementById("form").submit();
+        }
+    </script>
 </body>
 </html>

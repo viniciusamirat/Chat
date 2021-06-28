@@ -75,7 +75,7 @@ config();
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
                         <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
-                        <button class="btn btn-primary btn-sm" onclick="window.location.href='../perfil/index.php?id=<?php echo $row['id']; ?>#fim'">Ver perfil</button>
+                        <button class="btn btn-primary btn-sm" onclick="window.location.href='../perfil/index.php?id=<?php echo $row['id']; ?>'">Ver perfil</button>
                     </li>
                 <?php endforeach; ?>
             </ul>

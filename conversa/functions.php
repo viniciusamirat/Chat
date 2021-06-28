@@ -59,4 +59,13 @@ function isContato($usuario, $contato){
     return isContact($usuario, $contato);
 }
 
+function addContato($usuario, $contato){
+    addContact($usuario, $contato);
+}
+
+function tiraContato($usuario, $contato){
+    removeContact($usuario, $contato);
+}
+
+
 ?>
