@@ -56,3 +56,13 @@ footer {
     margin-right: 5px;
     width: 97%;
 }
+
+.caixa{
+    width: 70%;
+    margin-left: 10px;
+}
+
+.direita{
+    margin-left: auto;
+    margin-right: 10px;
+}

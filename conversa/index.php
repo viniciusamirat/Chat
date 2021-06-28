@@ -58,15 +58,17 @@ foreach ($resu as $row){
     </nav>
     <br>
     <br>
-    <br>
     
     <?php if ($mensagens) : ?>
         <?php foreach ($mensagens as $row) : ?>
 
-            <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
-                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
-                <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>"><?php echo $row['hora']; ?></span>
+            <div class="caixa <?php if ($row['de'] == $_SESSION['usuario']){ echo 'direita';} ?>">
+                <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
+                    <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
+                    <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>"><?php echo $row['hora']; ?></span>
+                </div>
             </div>
+            
 
         <?php endforeach; ?>
     <?php endif; ?>
