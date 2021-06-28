@@ -32,9 +32,8 @@ foreach ($resu as $row){
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-info navbar-dark" style="position: fixed; width: 100%;">
-        <a href="../conversa/index.php?id=<?php echo $_SESSION['contato']; ?>#fim">
-            <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
-        </a>
+        <!--<a href="../conversa/index.php?id=<?php //echo $_SESSION['contato']; ?>#fim">-->
+        <img onclick="history.go(-1);" src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         <span style="color: white;"><strong><?php echo $nome ?></strong></span>
     </nav>
     <br>

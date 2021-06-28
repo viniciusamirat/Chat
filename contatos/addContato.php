@@ -54,7 +54,7 @@ config();
     <div class="container sombra">
         <div class="container espaco">
             <form action="pesquisa.php" method="post">
-                <h3 style="text-align: center;">Pesquise com o email do contato</h3>
+                <h3 style="text-align: center;">Pesquise com o email do usuário</h3>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="usuario" placeholder="Email">
                     <div class="input-group-append">
@@ -72,13 +72,11 @@ config();
             <?php unset($_SESSION['resultado']); ?>
             <ul class="list-group">
                 <?php foreach ($resu as $row) : ?>
-                    <a style="text-decoration: none;" href="../conversa/index.php?id=<?php echo $row['id']; ?>#fim">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
-                            <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
-                            <!--<span class="badge badge-primary badge-pill">12</span>-->
-                        </li>
-                    </a>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <img src="../cadastro/avatar/<?php echo $row['foto']; ?>" alt="Avatar" style="width: 40px; height: 40px; border-radius: 100%;">
+                        <section style="margin-left: 15px; margin-right: auto;"><?php echo $row['nome']; ?></section>
+                        <button class="btn btn-primary btn-sm" onclick="window.location.href='../perfil/index.php?id=<?php echo $row['id']; ?>#fim'">Ver perfil</button>
+                    </li>
                 <?php endforeach; ?>
             </ul>
         <?php elseif (isset($_SESSION['erro'])) : ?>
