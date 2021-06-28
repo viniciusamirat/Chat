@@ -1,7 +1,7 @@
 /* Chat containers */
 .container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
+    border: 1px solid #dedede;
+
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
@@ -9,8 +9,9 @@
   
   /* Darker chat container */
   .darker {
-    border-color: #ccc;
-    background-color: #ddd;
+    border-color: white;
+    background-color: #17a3b879;
+    color: black;
   }
   
   /* Clear floats */
@@ -45,7 +46,7 @@
   /* Style time text */
   .time-left {
     float: left;
-    color: #999;
+    color: rgb(119, 118, 118);
   }
 
 footer {

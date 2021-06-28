@@ -67,7 +67,6 @@ foreach ($resu as $row){
         <?php foreach ($mensagens as $row) : ?>
 
             <div class="container <?php if ($row['de'] != $_SESSION['usuario']){ echo 'darker';} ?>">
-                <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><strong><?php if ($row['de'] == $_SESSION['usuario']){ echo name($_SESSION['usuario']); } else { echo $nome;} ?></strong></p>
                 <p <?php if ($row['de'] == $_SESSION['usuario']){ echo 'class="text-right"';} ?>><?php echo $row['mensagem']; ?></p>
                 <span class="time<?php if ($row['de'] != $_SESSION['usuario']){ echo '-left';} else { echo '-right';} ?>"><?php echo $row['hora']; ?></span>
             </div>
