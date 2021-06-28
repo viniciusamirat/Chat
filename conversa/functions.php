@@ -55,4 +55,8 @@ function autenticar(){
     }
 }
 
+function isContato($usuario, $contato){
+    return isContact($usuario, $contato);
+}
+
 ?>

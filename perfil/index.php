@@ -14,6 +14,8 @@ foreach ($resu as $row){
     $foto = $row['foto'];
 }
 
+$resu2 = isContato($_SESSION['usuario'], $_SESSION['contato']);
+
 
 ?>
 
@@ -43,6 +45,22 @@ foreach ($resu as $row){
     <div class="container">
         <img src="../cadastro/avatar/<?php echo $foto; ?>" class="card-img-top">
     </div>
+    <br>
+
+    <?php if ($resu2) : ?>
+
+        <div class="container" style="text-align: center;">
+            <button class="btn btn-success btn-sm">Adicionado &check;</button>
+        </div>
+
+    <?php else : ?>
+
+        <div class="container" style="text-align: center;">
+            <button class="btn btn-primary btn-sm">Adicionar</button>
+        </div>
+
+    <?php endif; ?>
+
     <br>
     <div class="container" style="text-align: center; font-weight: bold;">
         <p><?php echo $nome; ?></p>

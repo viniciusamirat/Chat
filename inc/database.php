@@ -246,4 +246,27 @@ function procurar($usuario){
 
     close_database($database);
 }
+
+function isContact($usuario, $contato){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT * FROM contatos WHERE usuario = :usu and contato = :cont");
+        $sql->execute(array(
+            ':usu'=>$usuario,
+            ':cont'=>$contato
+        ));
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            return true;
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>
