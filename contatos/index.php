@@ -43,7 +43,7 @@ $resu = procurar_contatos();
             </button>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="../perfil_usu/">Meu perfil</a>
-                <a class="dropdown-item" href="#">Configurações</a>
+                <a class="dropdown-item" href="../configuracoes/">Configurações</a>
                 <a class="dropdown-item" href="../sobre/">Sobre</a>
             </div>
         </div>

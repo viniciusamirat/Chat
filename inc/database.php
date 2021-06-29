@@ -311,4 +311,82 @@ function removeContact($usuario, $contato){
 
     close_database($database);
 }
+
+function find_data($usu){
+    $database = open_database();
+    
+    try{
+        $usuario = $database->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $usuario->execute(array(
+            ':id'=>$usu
+        ));
+
+        foreach ($usuario as $dados){
+            $foto = $dados['foto'];
+            $nome = $dados['nome'];
+            $email = $dados['email'];
+            $data = $dados['data_cadastro'];
+            $hora = $dados['hora_cadastro'];
+        }
+
+        $msg1 = $database->prepare("SELECT * FROM conversas WHERE de = :de");
+        $msg1->execute(array(
+            ':de'=>$usu
+        ));
+
+        $enviadas = $msg1->rowCount();
+
+        $msg2 = $database->prepare("SELECT * FROM conversas WHERE para = :para");
+        $msg2->execute(array(
+            ':para'=>$usu
+        ));
+
+        $recebidas = $msg2->rowCount();
+
+        $infos = array($foto, $nome, $email, $data, $hora, $enviadas, $recebidas);
+
+        return $infos;
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
+
+function remove_usu($usu){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("DELETE FROM contatos WHERE usuario = :usu or contato = :cont");
+        $sql->execute(array(
+            ':usu'=>$usu,
+            ':cont'=>$usu
+        ));
+
+        $sql2 = $database->prepare("DELETE FROM conversas WHERE de = :usu or para = :usu2");
+        $sql2->execute(array(
+            ':usu'=>$usu,
+            ':usu2'=>$usu
+        ));
+
+        $sql3 = $database->prepare("DELETE FROM usuarios WHERE id = :id");
+        $sql3->execute(array(
+            ':id'=>$usu
+        ));
+
+
+
+        if ($sql3->rowCount() == 1){
+            return true;
+        } else {
+            return false;
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>
