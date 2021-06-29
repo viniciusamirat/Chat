@@ -79,7 +79,7 @@ foreach ($resu as $row){
     <br>
 
     <footer class="footer" style="margin-bottom: 30px;">
-            <!--<form action="index.php?id=<?php echo $_SESSION['contato']; ?>#fim" method="POST" autocomplete="off">-->
+            <!--<form action="index.php?id=<?php //echo $_SESSION['contato']; ?>#fim" method="POST" autocomplete="off">-->
             <form action="send.php" method="POST" autocomplete="off">
                 </div>
                 <div class="input-group mb-3">

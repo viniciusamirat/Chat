@@ -27,9 +27,17 @@ $resu = procurar_contatos();
 
         footer{
             position: fixed;
-            bottom:30px;
+            bottom:50px;
             width: 100%;
 
+        }
+
+        .botao{
+            font-size: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
     </style>
@@ -72,7 +80,7 @@ $resu = procurar_contatos();
 
     <footer>
         <div class="novo">
-            <button type="button" class="btn btn-success" onclick="window.location.href='addContato.php'">+</button>
+            <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='addContato.php'" style="font-size: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px;">+</button>
         </div>
         
     </footer>
