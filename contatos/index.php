@@ -32,14 +32,6 @@ $resu = procurar_contatos();
 
         }
 
-        .botao{
-            font-size: 30px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -50,7 +42,6 @@ $resu = procurar_contatos();
             </button>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="../perfil_usu/">Meu perfil</a>
-                <a class="dropdown-item" href="../inc/exit.php">Sair</a>
             </div>
         </div>
     </nav>

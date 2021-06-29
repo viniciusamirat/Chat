@@ -45,5 +45,8 @@ foreach ($resu as $row){
         <p><?php echo $email; ?></p>
 
     </div>
+    <div class="container" style="text-align: center;">
+        <button class="btn btn-danger btn-sm" onclick="window.location.href='../inc/exit.php'" style="font-weight: bold;">Sair</button>
+    </div>
 </body>
 </html>

@@ -35,20 +35,13 @@ config();
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
         <a class="navbar-brand" href="#"><strong>Adicionar contato</strong></a>
-        <div class="dropdown">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="../inc/exit.php">Sair</a>
-            </div>
-        </div>
     </nav>
     <br>
 
     <div class="container sombra">
         <div class="container espaco">
             <form action="pesquisa.php" method="post">
-                <h3 style="text-align: center;">Pesquise com o email do usuário</h3>
+                <h3 style="text-align: center;">Pesquisar email do usuário</h3>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="usuario" placeholder="Email">
                     <div class="input-group-append">
