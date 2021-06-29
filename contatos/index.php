@@ -21,8 +21,9 @@ $resu = procurar_contatos();
     <style>
         .novo{
             margin-left: auto;
-            margin-right: 45px;
-            width: 5%;
+            margin-right: 30px;
+            width: 50%;
+            text-align: right;
         }
 
         footer{
@@ -73,7 +74,7 @@ $resu = procurar_contatos();
 
     <footer>
         <div class="novo">
-            <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='addContato.php'" style="font-size: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px;">+</button>
+            <button type="button" class="btn btn-success btn-lg" onclick="window.location.href='addContato.php'" style="font-size: 30px; padding-top: 0px;">+</button>
         </div>
         
     </footer>
