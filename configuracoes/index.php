@@ -58,7 +58,7 @@ $resu = procurar_dados($_SESSION['usuario']);
                     
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <p><strong>foto:</strong> <?php echo $resu[0]; ?></p>
+                        <p><img src="../cadastro/avatar/<?php echo $resu[0]; ?>" alt="Avatar" style="width: 50px; height: 50px;"></p>
                         <p><strong>Nome:</strong> <?php echo $resu[1]; ?></p>
                         <p><strong>Email:</strong> <?php echo $resu[2]; ?></p>
                         <p><strong>Data do cadastro:</strong> <?php echo data($resu[3]); ?></p>
