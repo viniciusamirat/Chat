@@ -58,7 +58,8 @@ config();
             </div>
             
             <div style="text-align: right; margin-top:5px;">
-                <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
+                <input type="checkbox" name="olho" id="olho">
+                <label for="olho">Mostrar senha</label>
             </div>
             <br>
 
@@ -94,17 +95,13 @@ config();
         let senha = $('#senha');
         let olho= $("#olho");
 
-        olho.mousedown(function() {
-            senha.attr("type", "text");
-        });
-
-        olho.mouseup(function() {
-            senha.attr("type", "password");
-        });
-
-        //Evita que a senha fique exposta quando o botão é clicado e arrastado
-        $( "#olho" ).mouseout(function() { 
-            $("#senha").attr("type", "password");
+        olho.click(function() {
+            if(olho[0].checked){
+                senha.attr("type", "text");
+            } else {
+                senha.attr("type", "password");
+            }
+            
         });
     </script>
 </body>

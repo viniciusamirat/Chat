@@ -69,7 +69,8 @@ config_login();
                 <input class="input input-group" type="password" id="senha" name="senha" required>
             </div>
             <div style="text-align: right; margin-top:5px;">
-                <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
+                <input type="checkbox" name="olho" id="olho">
+                <label for="olho">Mostrar senha</label>
             </div><br>
             <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
             <input class="btn btn-success" type="submit" value="Entrar">
@@ -81,17 +82,13 @@ config_login();
         let senha = $('#senha');
         let olho= $("#olho");
 
-        olho.mousedown(function() {
-            senha.attr("type", "text");
-        });
-
-        olho.mouseup(function() {
-            senha.attr("type", "password");
-        });
-
-        //Evita que a senha fique exposta quando o botão é clicado e arrastado
-        $( "#olho" ).mouseout(function() { 
-            $("#senha").attr("type", "password");
+        olho.click(function() {
+            if(olho[0].checked){
+                senha.attr("type", "text");
+            } else {
+                senha.attr("type", "password");
+            }
+            
         });
     </script>
 </body>
