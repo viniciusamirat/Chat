@@ -105,7 +105,6 @@ function find_contacts(){
 
         if ($sql->rowCount() < 1){
             return false;
-            //$_SESSION['erro'] = "Nenhum usuário encontrado.";
         } else {
             return $sql->fetchAll();
         }
@@ -376,8 +375,6 @@ function remove_usu($usu){
         $sql3->execute(array(
             ':id'=>$usu
         ));
-
-
 
         if ($sql3->rowCount() == 1){
             return true;

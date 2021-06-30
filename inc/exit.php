@@ -7,6 +7,4 @@ unset($_SESSION['contato']);
 
 header('location: ../index.php');
 
-
-
 ?>
