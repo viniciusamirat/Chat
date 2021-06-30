@@ -50,7 +50,12 @@ config();
         <form action="cadastrar.php" method="POST">
             <input class="input input-group" type="text" name="nome" placeholder="Nome" required><br>
             <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
-            <input class="input input-group" type="password" name="senha" placeholder="Senha" required><br>
+            <input class="input input-group" type="password" name="senha" placeholder="Senha" id="senha" required>
+            <div style="text-align: right; margin-top:5px;">
+                <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
+            </div>
+            
+
             <input type="hidden" name="foto" id="foto" value="">
 
             <h3><strong>Escolha seu avatar</strong></h3>
@@ -77,5 +82,24 @@ config();
         <br>
         <br>
     </div>
+
+    <script>
+        //Código que faz a senha ficar visível
+        let senha = $('#senha');
+        let olho= $("#olho");
+
+        olho.mousedown(function() {
+            senha.attr("type", "text");
+        });
+
+        olho.mouseup(function() {
+            senha.attr("type", "password");
+        });
+
+        //Evita que a senha fique exposta quando o botão é clicado e arrastado
+        $( "#olho" ).mouseout(function() { 
+            $("#senha").attr("type", "password");
+        });
+    </script>
 </body>
 </html>
