@@ -48,13 +48,19 @@ config();
 
         <h2><strong>Cadastrar novo usuário</strong></h2>
         <form action="cadastrar.php" method="POST">
-            <input class="input input-group" type="text" name="nome" placeholder="Nome" required><br>
-            <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
-            <input class="input input-group" type="password" name="senha" placeholder="Senha" id="senha" required>
+            <div style="text-align: left;">
+                <label for="nome" style="margin-top:5px; margin-bottom: 0px;"><strong>Nome:</strong></label>
+                <input class="input input-group" type="text" name="nome" id="nome" required>
+                <label for="email" style="margin-top:15px; margin-bottom: 0px;"><strong>Email:</strong></label>
+                <input class="input input-group" type="text" name="email" id="email" required>
+                <label for="senha" style="margin-top:15px; margin-bottom: 0px;"><strong>Senha:</strong></label>
+                <input class="input input-group" type="password" name="senha" id="senha" required>
+            </div>
+            
             <div style="text-align: right; margin-top:5px;">
                 <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
             </div>
-            
+            <br>
 
             <input type="hidden" name="foto" id="foto" value="">
 

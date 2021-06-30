@@ -62,11 +62,15 @@ config_login();
 
         <h2><strong>Login</strong></h2>
         <form action="login.php" method="POST">
-            <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
-            <input class="input input-group" type="password" id="senha" name="senha" placeholder="Senha" required>
+            <div style="text-align: left;">
+                <label for="email" style="margin-top:5px; margin-bottom: 0px;"><strong>Email:</strong></label>
+                <input class="input input-group" type="text" name="email" id="email" required>
+                <label for="senha" style="margin-top:15px; margin-bottom: 0px;"><strong>Senha:</strong></label>
+                <input class="input input-group" type="password" id="senha" name="senha" required>
+            </div>
             <div style="text-align: right; margin-top:5px;">
                 <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
-            </div>
+            </div><br>
             <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
             <input class="btn btn-success" type="submit" value="Entrar">
         </form>
