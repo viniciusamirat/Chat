@@ -19,6 +19,7 @@ function close_database($conexao){
     }
 }
 
+//Salva a mensagem enviada no DB
 function save($table, $de, $para, $mensagem){
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d');
@@ -44,6 +45,7 @@ function save($table, $de, $para, $mensagem){
     close_database($database);
 }
 
+//atualiza o chat
 function atualizar($contato){
     $database = open_database();
 
@@ -68,6 +70,7 @@ function atualizar($contato){
     close_database($database);
 }
 
+//Procura o usuário para efetuar o login
 function find_usu($table, $usuario, $password){
     $database = open_database();
 
@@ -90,6 +93,7 @@ function find_usu($table, $usuario, $password){
     close_database($database);
 }
 
+//Procura todos os contatos do usuário
 function find_contacts(){
     $database = open_database();
     
@@ -105,18 +109,6 @@ function find_contacts(){
         } else {
             return $sql->fetchAll();
         }
-    /*try{
-        $sql = $database->prepare("SELECT * FROM usuarios WHERE NOT id = :id ORDER BY nome;");
-        $sql->execute(array(
-            ':id'=>$_SESSION['usuario']
-        ));
-
-        if ($sql->rowCount() < 1){
-            return false;
-            $_SESSION['erro'] = "Nenhum usuário encontrado.";
-        } else {
-            return $sql->fetchAll();
-        }*/
         
     } catch (PDOException $e){
         echo "Error: " . $e->getMessage();
@@ -125,6 +117,7 @@ function find_contacts(){
     close_database($database);
 }
 
+//Procura as informações do contato (foto, nome, etc...)
 function find_contact($contact){
     $database = open_database();
     
@@ -147,6 +140,7 @@ function find_contact($contact){
     close_database($database);
 }
 
+//Retorna o nome do usuário ou contato de acordo com seu id
 function nome($nome){
     $database = open_database();
     
@@ -172,6 +166,7 @@ function nome($nome){
     close_database($database);
 }
 
+//Retorna a foto do usuário ou contato de acordo com seu id
 function foto($contato){
     $database = open_database();
     
@@ -197,6 +192,7 @@ function foto($contato){
     close_database($database);
 }
 
+//Cadastra os novos usuários
 function cadastrar_usu($table, $foto, $nome, $email, $senha){
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d');
@@ -224,6 +220,7 @@ function cadastrar_usu($table, $foto, $nome, $email, $senha){
     close_database($database);
 }
 
+//Procura um contato Quando efetua a pesquisa no arquivo pesquisa.php
 function procurar($usuario){
     $database = open_database();
     
@@ -247,6 +244,7 @@ function procurar($usuario){
     close_database($database);
 }
 
+//Pesquisa se é um contato adicionado ou não
 function isContact($usuario, $contato){
     $database = open_database();
     
@@ -270,6 +268,7 @@ function isContact($usuario, $contato){
     close_database($database);
 }
 
+//adiciona um contato
 function addContact($usuario, $contato){
     $database = open_database();
     
@@ -291,6 +290,7 @@ function addContact($usuario, $contato){
     close_database($database);
 }
 
+//Remove o contato
 function removeContact($usuario, $contato){
     $database = open_database();
     
@@ -312,6 +312,7 @@ function removeContact($usuario, $contato){
     close_database($database);
 }
 
+//Procura os dados do usuário para as configurações
 function find_data($usu){
     $database = open_database();
     
@@ -354,6 +355,7 @@ function find_data($usu){
     close_database($database);
 }
 
+//Apaga a conta do usuário
 function remove_usu($usu){
     $database = open_database();
     

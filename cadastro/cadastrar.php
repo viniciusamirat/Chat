@@ -2,6 +2,7 @@
 require_once '../conversa/functions.php';
 config();
 
+//Verifica se todos os campos estão preenchidos
 if (!empty($_POST['nome']) and !empty($_POST['email']) and !empty($_POST['senha'])  and !empty($_POST['foto'])) {
 
     $nome = $_POST['nome'];
@@ -20,6 +21,7 @@ if (!empty($_POST['nome']) and !empty($_POST['email']) and !empty($_POST['senha'
         header('location: ../index.php');
     }
 
+//Verifica se o usuário escolheu um avatar
 } else if (!empty($_POST['nome']) and !empty($_POST['email']) and !empty($_POST['senha'])){
     $_SESSION['erro'] = "Escolha um avatar.";
     header('location: index.php');

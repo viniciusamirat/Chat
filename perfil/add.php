@@ -2,6 +2,7 @@
 require_once '../conversa/functions.php';
 config();
 
+//Adiciona ou remove um contato
 if ($_POST['contato'] == "sim") {
   
     addContato($_SESSION['usuario'], $_SESSION['contato']);

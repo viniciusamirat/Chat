@@ -2,6 +2,7 @@
 require_once '../conversa/functions.php';
 config();
 
+//Verifica se o compo msg está preenchido, se sim grava no banco a mensagem, se não apenas atualiza o chat
 if (!empty($_POST['msg'])) {
     
     $mensagem = $_POST['msg'];
