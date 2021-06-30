@@ -63,10 +63,32 @@ config_login();
         <h2><strong>Login</strong></h2>
         <form action="login.php" method="POST">
             <input class="input input-group" type="text" name="email" placeholder="Email" required><br>
-            <input class="input input-group" type="password" name="senha" placeholder="Senha" required><br>
+            <input class="input input-group" type="password" id="senha" name="senha" placeholder="Senha" required>
+            <div style="text-align: right; margin-top:5px;">
+                <button class="btn btn-light" type="button" id="olho">Mostrar senha</button>
+            </div>
             <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
             <input class="btn btn-success" type="submit" value="Entrar">
         </form>
     </div>
+
+    <script>
+        //Código que faz a senha ficar visível
+        let senha = $('#senha');
+        let olho= $("#olho");
+
+        olho.mousedown(function() {
+            senha.attr("type", "text");
+        });
+
+        olho.mouseup(function() {
+            senha.attr("type", "password");
+        });
+
+        //Evita que a senha fique exposta quando o botão é clicado e arrastado
+        $( "#olho" ).mouseout(function() { 
+            $("#senha").attr("type", "password");
+        });
+    </script>
 </body>
 </html>
