@@ -219,6 +219,29 @@ function cadastrar_usu($table, $foto, $nome, $email, $senha){
     close_database($database);
 }
 
+//Pesquisa se o email que está sendo cadastrado já existe
+function email_existe($email){
+    $database = open_database();
+    
+    try{
+        $sql = $database->prepare("SELECT email FROM usuarios WHERE email = :email");
+        $sql->execute(array(
+            ':email'=>$email
+        ));
+
+        if ($sql->rowCount() < 1){
+            return false;
+        } else {
+            return true;
+        }
+        
+    } catch (PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
+
 //Procura um contato Quando efetua a pesquisa no arquivo pesquisa.php
 function procurar($usuario){
     $database = open_database();
