@@ -75,6 +75,8 @@ config_login();
             <button class="btn btn-info" type="button" onclick="window.location.href='cadastro/'">Cadastrar</button>
             <input class="btn btn-success" type="submit" value="Entrar">
         </form>
+        <br>
+        <p><strong>Obs: </strong>O layout deste projeto é responsivo apenas em celulares.</p>
     </div>
 
     <script>

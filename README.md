@@ -2,6 +2,7 @@
 <p>
     Este projeto é uma rede social onde você pode adicionar contatos e conversar com eles por um chat.
 </p>
+<p><strong>Obs: </strong>O layout deste projeto é responsivo apenas em celulares.</p>
 <br>
 <h2>Como funciona?</h2>
 <h3>Cadastro</h3>
