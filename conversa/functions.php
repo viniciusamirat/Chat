@@ -78,7 +78,7 @@ function excluir_usu($usu) {
     $resu = remove_usu($usu);
 
     if ($resu){
-        $_SESSION['mensagem'] = "Conta excluida com sucesso!<br>Obrigado testar este projeto!";
+        $_SESSION['mensagem'] = "Conta excluída com sucesso!<br>Obrigado testar este projeto!";
         return true;
     } else {
         $_SESSION['erro'] = "Erro ao excluir sua conta!";

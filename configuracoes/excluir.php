@@ -8,7 +8,7 @@ if (!empty($_GET['id'] and $_GET['id'] == $_SESSION['usuario'])){
     $resu = excluir_usu($_SESSION['usuario']);
 
     if ($resu){
-        header('location: ../index.php');
+        header('location: ../inc/exit.php');
     } else {
         echo "<script>history.go(-1)</script>;";
     }
