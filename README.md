@@ -25,6 +25,9 @@
 <p>
     No chat é possível enviar mensagens de texto e visualizar o perfil do contato.
 </p>
+<p>
+    <strong>Vale ressaltar que o destinatário só receberá sua mensagem se ele também adicionar você.</strong>
+</p>
 <h3>Seu perfil</h3>
 <p>
     Para acessar o seu perfil basta ir na tela "Contatos", clicar no botão de opções localizado no canto superior direto e clicar em "Meu perfil".
@@ -42,3 +45,8 @@
     <li><strong>Meus dados:</strong> Aqui você pode visualizar todos os dados da sua conta.</li><br>
     <li><strong>Apagar conta:</strong> Aqui você poderá apagar totalmente sua conta.</li>
 </ul>
+<br>
+<h2>Recado</h2>
+<p>
+    Caso você tenha interesse em testar esse projeto, deixei o arquivo .sql do banco de dados MySql junto aos aquivos.
+</p>
