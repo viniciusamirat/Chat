@@ -1,5 +1,3 @@
-### Chat
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,10 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Sobre</title>
 </head>
 <body>
     <div class="container">
@@ -21,7 +15,6 @@
         <br>
         <h2>Como funciona?</h2>
         <br>
-        
         <h3>Cadastro</h3>
         <p>
             Ao fazer o primeiro acesso você deverá se cadastrar informando seu nome, email, senha e escolhendo um avatar como sua foto de perfil.
@@ -29,7 +22,6 @@
         <p>
             Todos os dados cadastrados poderão ser editados ou excluídos a qualquer momento.
         </p>
-        
         <h3>Contatos</h3>
         <p>
             Inicialmente você não terá nenhum contato, e para que você possa adicionar alguém, você deverá 
@@ -37,7 +29,6 @@
             inserir o email do usuário que você deseja adicionar, entrar no perfil dele, clicar no botão <button class="btn btn-primary btn-sm">Adicionar</button> e pronto! 
             Agora basta retornar para sua lista de contatos e o seu novo contato estará lá.
         </p>
-        
         <h3>Chat</h3>
         <p>
             Para conversar com algum contato você deve localiza-lo em sua lista de contatos e em seguida clicar nele.
@@ -45,14 +36,12 @@
         <p>
             No chat é possível enviar mensagens de texto e visualizar o perfil do contato.
         </p>
-        
         <h3>Seu perfil</h3>
         <p>
             Para acessar o seu perfil basta ir na tela "Contatos", clicar no botão de opções localizado no canto superior direto e clicar em "Meu perfil".
         </p>
         <p>Lá é possível visualizar seu nome e email.</p>
         <p>Também é possível editar suas informações que foram cadastradas clicando em <button class="btn btn-primary btn-sm">Editar perfil</button> ou se você quiser encerrar a sessão você pode fazer isso clicando em <button class="btn btn-danger btn-sm">Sair</button></p>
-
         <br>
         <h3>Configurações</h3>
         <p>
@@ -65,29 +54,11 @@
             <li><strong>Meus dados:</strong> Aqui você pode visualizar todos os dados da sua conta.</li><br>
             <li><strong>Apagar conta:</strong> Aqui você poderá apagar totalmente sua conta.</li>
         </ul>
-
         <br>
         <h2>Desenvolvedor</h2>
         <p>
             Caso tenha interesse em conversar com o desenvolvedor ou visualizar o repositório deste projeto, basta clicar em uma das opções abaixo.
         </p>
-
     </div>
-    
-    
-
-    <div class="container d-flex">
-        <div style="text-align: center;">
-            <img src="Autor.jpg" alt="Foto do criador" class="rounded-circle">
-            <p><strong>Vinícius Amirat</strong></p>
-        </div>
-        <div class="d-flex align-items-center" style="margin: auto;">
-            <div class="container" style="text-align: center;">
-                <a class="btn btn-primary" type="button" target="blank" href='https://www.linkedin.com/in/vin%C3%ADcius-amirat-41142a208' style="font-weight: bold;">Linkedin</a><br><br>
-                <a class="btn btn-dark" type="button" target="blank" href='https://github.com/viniciusamirat/Chat' style="font-weight: bold;">GitHub</a>
-            </div>
-        </div>
-    </div>
-    <br>
 </body>
 </html>
