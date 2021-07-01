@@ -36,6 +36,15 @@ foreach ($resu as $row){
     <br>
     <br>
 
+    <?php if (isset($_SESSION['mensagem'])) : ?>
+            
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><?php echo $_SESSION['mensagem']; ?></strong>
+            <?php unset($_SESSION['mensagem']); ?>
+        </div>
+    <?php endif; ?>
+
     <div class="container">
         <img src="../cadastro/avatar/<?php echo $foto; ?>" class="card-img-top">
     </div>
@@ -46,6 +55,7 @@ foreach ($resu as $row){
 
     </div>
     <div class="container" style="text-align: center;">
+        <button class="btn btn-primary btn-sm" onclick="window.location.href='editar.php'" style="font-weight: bold;">Editar perfil</button>
         <button class="btn btn-danger btn-sm" onclick="window.location.href='../inc/exit.php'" style="font-weight: bold;">Sair</button>
     </div>
 </body>

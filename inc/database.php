@@ -411,4 +411,32 @@ function remove_usu($usu){
 
     close_database($database);
 }
+
+//Edita as informações de cadastro do usuário
+function update_usu($table, $foto, $nome, $email, $senha){
+    //date_default_timezone_set('America/Sao_Paulo');
+    //$data = date('Y-m-d');
+    //$hora = date('H:i');
+    
+    $database = open_database();
+
+    try {
+        //$sql = $database->prepare("INSERT INTO $table (foto, nome, email, senha) VALUES (:foto, :nome, :email, :senha)");
+        $sql = $database->prepare("UPDATE $table SET  foto = :foto, nome = :nome, email = :email, senha = :senha WHERE id = :id");
+        $sql->execute(array(
+            ':foto'=>$foto,
+            ':nome'=>$nome,
+            ':email'=>$email,
+            ':senha'=>$senha,
+            ':id'=>$_SESSION['usuario']
+        ));
+
+        return true;
+
+    } catch (PSOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+
+    close_database($database);
+}
 ?>
