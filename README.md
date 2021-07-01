@@ -4,7 +4,6 @@
 </p>
 <br>
 <h2>Como funciona?</h2>
-<br>
 <h3>Cadastro</h3>
 <p>
     Ao fazer o primeiro acesso você deverá se cadastrar informando seu nome, email, senha e escolhendo um avatar como sua foto de perfil.
@@ -16,7 +15,7 @@
 <p>
     Inicialmente você não terá nenhum contato, e para que você possa adicionar alguém, você deverá 
     clicar no botão "+" que se localiza na tela "Contatos", 
-    inserir o email do usuário que você deseja adicionar, entrar no perfil dele, clicar no botão >"Adicionar" e pronto! 
+    inserir o email do usuário que você deseja adicionar, entrar no perfil dele, clicar no botão "Adicionar" e pronto! 
     Agora basta retornar para sua lista de contatos e o seu novo contato estará lá.
 </p>
 <h3>Chat</h3>
@@ -32,7 +31,6 @@
 </p>
 <p>Lá é possível visualizar seu nome e email.</p>
 <p>Também é possível editar suas informações que foram cadastradas clicando em "Editar perfil" ou se você quiser encerrar a sessão você pode fazer isso clicando em "Sair"</p>
-<br>
 <h3>Configurações</h3>
 <p>
     A tela de configurações pode ser acessada clicando no botão de opções localizado no canto superior direto da tela "Contatos" e clicar na opção "Configurações".
