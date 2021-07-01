@@ -23,12 +23,12 @@ config();
         <a style="text-decoration: none;" href="../index.php">
             <img src="../icon/seta.png" alt="Seta" style="width: 40px; height: 40px;">
         </a>
-        <a class="navbar-brand" href="index.php"><strong>Cadastrar</strong></a>
+        <span style="color: white;"><strong>Cadastrar</strong></span>
         <div class="dropdown">
             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Sobre</a>
+                <a class="dropdown-item" href="../sobre/">Sobre</a>
             </div>
         </div>
     </nav>
